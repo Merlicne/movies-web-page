@@ -33,7 +33,6 @@ class MovieController extends Controller
     public function searchMovies(Request $request)
     {
         $query = $request->input('query');
-
         return redirect()->away('https://www.google.com/search?q='.$query);
     }
 }
