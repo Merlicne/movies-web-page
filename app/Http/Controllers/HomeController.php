@@ -3,21 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Http\ApiClient\implementation\TmdbApi;
+use App\Http\Services\MovieServiceInterface;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    private $tmdbClient;
+    private $movieService;
 
-    public function __construct(TmdbApi $tmdbClient)
+    public function __construct(MovieServiceInterface $movieService)
     {
-        $this->tmdbClient = $tmdbClient;
+        $this->movieService = $movieService;
     }
     
     public function index(): View
     {
-        $playingMovies = $this->tmdbClient->getNowPlayingMovies(1);
+        $playingMovies = $this->movieService->getNowPlayingMovies();
         return View('pages/index',[
             'playingMovies' => $playingMovies
         ]);

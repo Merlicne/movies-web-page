@@ -19,6 +19,9 @@ class AppServiceProvider extends ServiceProvider
                 config('api.tmdb.image_base_url')
             );
         });
+
+        $this->app->bind('App\Http\ApiClient\TmdbClientInterface', 'App\Http\ApiClient\implementation\TmdbApi');
+        $this->app->bind('App\Http\Services\MovieServiceInterface', 'App\Http\Services\implementation\MovieService');
     }
 
     /**

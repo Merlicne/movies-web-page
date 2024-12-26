@@ -5,7 +5,7 @@ use App\Models\Movies;
 
 interface TmdbClientInterface
 {
-    public function getMovieDetail(int $id): Movies;
+    public function getMovieDetail(int $id): array;
     public function searchMovies(string $query): array;
     public function getPopularMovies(): array;
     public function getTopRatedMovies(): array;

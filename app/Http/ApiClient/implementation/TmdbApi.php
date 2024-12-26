@@ -2,11 +2,13 @@
 
 namespace App\Http\ApiClient\implementation;
 
+use App\Http\ApiClient\TmdbClientInterface;
 use GuzzleHttp\Client;
 use Illuminate\Support\Arr;
 
-class TmdbApi 
+class TmdbApi implements TmdbClientInterface
 {
+    //* configuration
     private $url;
     private $imageBaseUrl;
     private $apiKey;
@@ -20,6 +22,8 @@ class TmdbApi
         $this->client = new Client();
     }
 
+    //* Abstraction
+
     public function getNowPlayingMovies(int $page): array
     {
         $params = [
@@ -27,6 +31,29 @@ class TmdbApi
         ];
         return $this->get('/movie/now_playing',$params)['results'];
     }
+
+    public function getMovieDetail(int $id): array
+    {
+        throw new \Exception("Not implemented");
+    }
+
+    public function searchMovies(string $query): array
+    {
+        throw new \Exception("Not implemented");
+    }
+
+    public function getPopularMovies(): array
+    {
+        throw new \Exception("Not implemented");
+    }
+
+    public function getTopRatedMovies(): array
+    {
+        throw new \Exception("Not implemented");
+    }
+
+
+    //* Implementation
 
     private function get($path, $params = [])
     {
