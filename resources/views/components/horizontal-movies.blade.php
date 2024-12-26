@@ -3,7 +3,7 @@
     <div class="movies-container">
         <div class="flex flex-nowrap">
             @foreach ($movies as $movie)
-                <a href="https://www.google.com/search?q={{ $movie['title'] }}" class="movie-card px-3">
+                <a href="/movies/{{$movie['id']}}__{{$movie['title']}}" class="movie-card px-3">
                     <div class="card-content">
                         <img src="https://image.tmdb.org/t/p/w500/{{ $movie['poster_path'] }}" 
                              alt="{{ $movie['title'] }}" class="movie-poster">
