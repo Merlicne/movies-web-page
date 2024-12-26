@@ -6,7 +6,7 @@
     <title>Home</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body style="background: url({{ asset('/images/bg/hill-cloud.jpg')}}) no-repeat center center fixed;">
+<body style="background: url({{ asset('/images/bg/hill-cloud.jpg')}}) no-repeat center center fixed; background-size: cover;">
 <body>
 
     @include('commonviews.naviagator-bar')
