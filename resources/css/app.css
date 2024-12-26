@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #e6f4f1;
+    height: 60px;
+}
+
+
+.navlogo {
+    display: flex;
+    padding: 0.5rem;
+    width: 20%;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    width: 75%;
+    gap: 1rem;
+    justify-content: end;
+    padding-right: 2rem;
+    align-items: center;
+    font-weight: 500;
+}
+
+.page-body {
+    padding-top: 1rem;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+.movies-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.movies-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+
+.movie-card {
+    width: 10rem;
+    /* height: 300px; */
+}
+
+.movie-card div img {
+    width: 100%;
+}
