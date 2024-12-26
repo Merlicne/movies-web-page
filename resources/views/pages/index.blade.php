@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Home</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+<body style="background: url({{ asset('/images/bg/hill-cloud.jpg')}}) no-repeat center center fixed;">
 <body>
 
     @include('commonviews.naviagator-bar')
-    <div class="page-body">
-        
+    <div class="page-body text-white font-semibold " >
+        {{-- Now Playing Movies --}}
         @include('components.horizontal-movies', ['title' => 'Now Playing Movies', 'movies' => $playingMovies])
 
     </div>
