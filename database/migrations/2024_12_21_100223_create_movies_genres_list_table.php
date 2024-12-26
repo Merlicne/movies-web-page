@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('movies_genres_list', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('movie_id')->constrained('movies');
-            $table->foreignId('genre_id')->constrained('genres');
+            $table->foreignId('movie_id')->constrained('movies', 'movie_id');
+            $table->foreignId('genre_id')->constrained('genres', 'genre_id');
             $table->unique(['movie_id', 'genre_id']);
             $table->timestamps();
         });
