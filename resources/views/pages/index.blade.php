@@ -10,7 +10,7 @@
 <body>
 
     @include('commonviews.naviagator-bar')
-    <div class="page-body text-white font-semibold " >
+    <div class="page-body text-white font-semibold gap-y-1" >
         {{-- Now Playing Movies --}}
         @include('components.horizontal-movies', ['title' => 'Now Playing Movies', 'movies' => $playingMovies])
 

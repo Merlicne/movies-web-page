@@ -23,7 +23,7 @@ class TmdbApi
     public function getNowPlayingMovies(int $page): array
     {
         $params = [
-            'page' => 1,
+            'page' => $page,
         ];
         return $this->get('/movie/now_playing',$params)['results'];
     }

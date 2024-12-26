@@ -3,14 +3,13 @@
     <div class="movies-container">
         <div class="flex flex-nowrap">
             @foreach ($movies as $movie)
-                <div class="movie-card px-3">
-                    <div
-                        class="max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                        <img src="https://image.tmdb.org/t/p/w500/{{ $movie['poster_path'] }}"
-                            alt="{{ $movie['title'] }}">
+                <a href="https://www.google.com/search?q={{ $movie['title'] }}" class="movie-card px-3">
+                    <div class="card-content">
+                        <img src="https://image.tmdb.org/t/p/w500/{{ $movie['poster_path'] }}" 
+                             alt="{{ $movie['title'] }}" class="movie-poster">
                     </div>
-                    <p class="">{{ $movie['title'] }}</p>
-                </div>
+                    <p class="movie-title">{{ $movie['title'] }}</p>
+                </a>
             @endforeach
         </div>
     </div>
