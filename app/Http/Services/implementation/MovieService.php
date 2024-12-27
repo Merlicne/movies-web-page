@@ -24,19 +24,19 @@ class MovieService implements MovieServiceInterface{
         throw new \Exception("Not implemented");
     }
 
-    public function getPopularMovies(): array
+    public function getPopularMovies(int $page): array
     {
-        throw new \Exception("Not implemented");
+        return $this->tmdbClient->getPopularMovies($page);
     }
 
-    public function getTopRatedMovies(): array
+    public function getTopRatedMovies(int $page): array
     {
-        throw new \Exception("Not implemented");
+        return $this->tmdbClient->getTopRatedMovies($page);
     }
 
-    public function getNowPlayingMovies(): array
+    public function getNowPlayingMovies(int $page): array
     {
-        return $this->tmdbClient->getNowPlayingMovies(1);
+        return $this->tmdbClient->getNowPlayingMovies($page);
     }
 
 

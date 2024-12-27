@@ -13,6 +13,10 @@
     <div class="page-body text-white font-semibold gap-y-1" >
         {{-- Now Playing Movies --}}
         @include('components.horizontal-movies', ['title' => 'Now Playing Movies', 'movies' => $playingMovies])
+        {{-- Popular Movies --}}
+        @include('components.horizontal-movies', ['title' => 'Popular Movies', 'movies' => $popularMovies])
+        {{-- Top Rated Movies --}}
+        @include('components.horizontal-movies', ['title' => 'Top Rated Movies', 'movies' => $topRatedMovies])
 
     </div>
 

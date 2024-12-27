@@ -42,14 +42,21 @@ class TmdbApi implements TmdbClientInterface
         throw new \Exception("Not implemented");
     }
 
-    public function getPopularMovies(): array
+    public function getPopularMovies($page): array
     {
-        throw new \Exception("Not implemented");
+        $params = [
+            'page' => $page,
+        ];
+        return $this->get('/movie/popular',$params)['results'];
     }
 
-    public function getTopRatedMovies(): array
+    public function getTopRatedMovies($page): array
     {
-        throw new \Exception("Not implemented");
+        $params = [
+            'page' => $page,
+        ];
+        return $this->get('/movie/top_rated',$params)['results'];
+
     }
 
 

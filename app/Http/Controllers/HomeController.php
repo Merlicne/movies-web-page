@@ -18,9 +18,13 @@ class HomeController extends Controller
     
     public function index(): View
     {
-        $playingMovies = $this->movieService->getNowPlayingMovies();
+        $playingMovies = $this->movieService->getNowPlayingMovies(1);
+        $popularMovies = $this->movieService->getPopularMovies(1);
+        $topRatedMovies = $this->movieService->getTopRatedMovies(1);
         return View('pages/index',[
-            'playingMovies' => $playingMovies
+            'playingMovies' => $playingMovies,
+            'popularMovies' => $popularMovies,
+            'topRatedMovies' => $topRatedMovies
         ]);
     }
 }
