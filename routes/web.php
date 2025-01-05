@@ -14,3 +14,7 @@ Route::get('/movies', [MovieController::class, 'movies'])->name('movies');
 Route::get('/tv-series', [MovieController::class, 'tvSeries'])->name('tv-series');
 
 Route::get('/movies/{movie_id}', [MovieController::class, 'movieDetail'])->name('movie-detail');
+
+Route::get('/test', function () {
+	return view('pages/test');
+});

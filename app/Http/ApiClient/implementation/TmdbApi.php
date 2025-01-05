@@ -3,6 +3,7 @@
 namespace App\Http\ApiClient\implementation;
 
 use App\Http\ApiClient\TmdbClientInterface;
+use App\Http\Utility\ModelConverter;
 use GuzzleHttp\Client;
 use Illuminate\Support\Arr;
 
@@ -55,8 +56,8 @@ class TmdbApi implements TmdbClientInterface
         $params = [
             'page' => $page,
         ];
-        return $this->get('/movie/top_rated',$params)['results'];
-
+        $moviesJson = $this->get('/movie/top_rated',$params)['results'];
+        return ModelConverter::convertJsonToMovieModelArray($moviesJson);
     }
 
 
